@@ -1,5 +1,5 @@
 # Tanta
-This purpose of this project is to provide documentation and code samples which can assist people in developing applications for Windows Media Foundation in the C# language.
+The purpose of this project is to provide documentation and code samples which can assist people in developing applications for Windows Media Foundation in the C# language.
 
 Normally, WMF is considered to be a C++ tool - however the full functionality of Windows Media Foundation is available to users of the C# language via the very capable open source [MF.Net](https://sourceforge.net/projects/mfnet/) interface library.
 
