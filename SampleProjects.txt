@@ -1,0 +1,122 @@
+THE TANTA SAMPLE PROJECTS
+
+The Tanta Sample Projects are example Windows Media Foundation applications 
+written in C#. These projects use the open source MF.Net library to 
+interface with the Windows Media Foundation substrate.
+
+WHY WERE THE TANTA SAMPLE PROJECTS WRITTEN?
+
+The MF.Net library provides a collection of C# sample projects – these are, 
+in general, a pretty faithful port of the WMF C++ samples and they do 
+demonstrate most of the fundamental techniques. The major problem with them 
+is that they are structured in the C++ way and that way is not super intuitive 
+or familiar to C# users. The MF.Net sample code is fairly complex and 
+re-entrant with multiple classes per file and some of them even use 
+“old school” C++ mechanisms which put messages on the Windows Message Pump 
+to send notifications and events. None of this, including the traditional 
+C++ sparsity of comments, really serves to assist a person new to the 
+technology in learning Windows Media Foundation.
+
+In order to provide demonstrations of various WMF techniques, a new set of 
+sample programs have been written. Some, such as the TantaCaptureToFileViaReaderWriter, 
+are just re-factored and commented versions of the MF.Net examples. Others, such 
+as the TantaCaptureToScreenAndFile contain techniques not demonstrated anywhere else.
+
+There are 15 Tanta Sample Projects and each serves to illustrate a WMF concept. 
+In addition, there are many more comments in the code, there is only one class 
+per file and any event mechanisms use the far simpler C# Delegate/Event system. 
+
+It should be noted that the much of the useful, common, code has 
+been factored out into a utility library named TantaCommon. This library is 
+intended to provide a resource which can be included in a C# MF.Net application 
+in order to provide supporting functionality. This library also contains useful 
+controls which can do things like pick a video format or act as a self-contained 
+video display engine.
+
+The Tanta Sample Projects are open source and released under the MIT License.
+It should be noted that some parts of the code in the Tanta Sample Projects 
+are based on the MF.Net samples and that code, in turn, is derived from the original 
+Microsoft samples. These have been placed in the public domain without copyright.
+
+The samples are best compiled using Visual Studio 2017 on Windows 10, although most
+of them will work on Windows 7.
+
+A selection of sample MP3 and MP4 files are available at the root of the Tanta 
+Sample Application repository. All of the Tanta Sample Projects expect, by default,
+to read and write to a directory named "C:\Dump". You can save yourself a bit of
+typing if you create that directory and copy the sample files there. 
+
+DOWNLOAD THE TANTA SAMPLE PROJECTS
+
+You can download, clone or fork the Tanta Sample Projects at the following address:
+
+https://github.com/OfItselfSo/Tanta
+
+THE TANTA SAMPLE PROJECT DOCUMENTATION
+
+There is a free online book available which discusses the Tanta Sample Projects 
+in detail and which also provides an introduction to programming Windows Media 
+Foundation in C#. See the website at:
+
+http://www.OfItselfSo.com/Tanta
+
+THE TANTA SAMPLE APPLICATIONS
+
+TantaAudioFileCopyViaPipelineAndWriter – Demonstrates the Hybrid Architecture by copying a 
+    single stream (audio) MP3 file. This application may not work on Windows 7 
+    due to codec unavailability.
+	 
+TantaAudioFileCopyViaPipelineMP3Sink – Demonstrates the Pipeline Architecture by copying a
+    single stream (audio) MP3 file.
+	 
+TantaAudioFileCopyViaReaderWriter – Demonstrates the Reader-Writer Architecture by copying 
+    a single stream (audio) MP3 file. This application may not work on Windows 7 due to 
+	codec unavailability.
+	 
+TantaCaptureToFileViaReaderWriter – Uses a Reader-Writer Architecture to capture video 
+    directly to a file. 
+	 
+TantaCaptureToScreenAndFile – Uses a Hybrid Architecture to display video on the screen 
+    and, optionally, capture it to a file.
+	 
+TantaFilePlaybackAdvanced – Uses the Pipeline Architecture to play a media file containing 
+    audio and video tracks. This application uses the ctlTantaEVRFilePlayer control from 
+	the TantaCommon library and demonstrates various Pipeline control mechanisms such as 
+	Pause, Fast-Forward, Jump Scrolling and volume control etc.
+	 
+TantaFilePlaybackSimple - Uses the Pipeline Architecture to play a media file containing 
+    audio and video tracks. This application uses the ctlTantaEVRStreamDisplay control 
+	from the TantaCommon library to demonstrate simple audio and video playback with 
+	multiple streams.
+	 
+TantaTransformDirect - Uses the Pipeline Architecture to demonstrate how to use the Tanta 
+    Transform Base classes to build and add Transforms to a Topology. This application 
+	contains Transforms which count the video frames, convert the image to grayscale or 
+	write text on the video display – both Synchronous and Asynchronous Mode Transforms 
+	are demonstrated.
+	 
+TantaTransformInDLLClient – A Pipeline Architecture client which uses a DLL based Transform. 
+    This application also demonstrates various methods the client application can use to 
+	communicate with DLL based Transforms.
+	 
+TantaTransformInDLL – A project which creates a Transform as a DLL and also, optionally, 
+    registers it on the system. The Transform in this application rotates or mirrors the 
+	video on display.
+	 
+TantaTransformPicker – A project which uses the ctlTantaTransformPicker control in the 
+    TantaCommon library to enumerate and display the capabilities of the Transforms 
+	registered on the system.
+	 
+TantaVideoFileCopyViaPipelineAndWriter – Demonstrates the Hybrid Architecture by copying 
+    a two stream (audio and video) MP4 file. This application may not work on Windows 7 
+	due to codec unavailability.
+	 
+TantaVideoFileCopyViaPipelineMP4Sink – Demonstrates the Pipeline Architecture by copying a
+    two stream (audio and video) MP4 file.
+	 
+TantaVideoFileCopyViaReaderWriter – Demonstrates the Reader-Writer Architecture by copying 
+    a two stream (audio and video) MP4 file. This application may not work on Windows 7 
+	due to codec unavailability.
+	 
+TantaVideoFormats – Uses the ctlTantaVideoPicker control from the TantaCommon library to 
+    show the video formats offered by the video capture devices (webcams) on the PC.

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96B554D1-CBFA-450D-A5BA-3A353F15C52B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TantaCommon</RootNamespace>
+    <AssemblyName>TantaCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MediaFoundation">
+      <HintPath>..\MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ctlTantaEVRStreamDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTantaEVRStreamDisplay.Designer.cs">
+      <DependentUpon>ctlTantaEVRStreamDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlTantaTransformPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTantaTransformPicker.Designer.cs">
+      <DependentUpon>ctlTantaTransformPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlTantaVideoPickerViaReader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTantaVideoPickerViaReader.Designer.cs">
+      <DependentUpon>ctlTantaVideoPickerViaReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TantaBitMapFileHeader.cs" />
+    <Compile Include="ctlTantaEVRFilePlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTantaEVRFilePlayer.Designer.cs">
+      <DependentUpon>ctlTantaEVRFilePlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctlTantaVideoPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctlTantaVideoPicker.Designer.cs">
+      <DependentUpon>ctlTantaVideoPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TantaCOMObjBase.cs" />
+    <Compile Include="TantaEVRPlayerStateEnum.cs" />
+    <Compile Include="TantaMFTAsyncBlockingQueue.cs" />
+    <Compile Include="TantaMFTAsyncMessageHolder.cs" />
+    <Compile Include="TantaMFTAsyncMessageTypeEnum.cs" />
+    <Compile Include="TantaMFTBase_Async.cs" />
+    <Compile Include="TantaMFTCapabilityContainer.cs" />
+    <Compile Include="TantaMediaSessionPlaybackRateCapabilities.cs" />
+    <Compile Include="TantaGuidNamePair.cs" />
+    <Compile Include="TantaMFTBase_Sync.cs" />
+    <Compile Include="TantaMFVideoFormatContainer.cs" />
+    <Compile Include="TantaOpenFileDialogInvoker.cs" />
+    <Compile Include="TantaAsyncCallbackHandler.cs" />
+    <Compile Include="TantaMediaTypeInfo.cs" />
+    <Compile Include="TantaMFDevice.cs" />
+    <Compile Include="TantaWMFUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ListViewItemCompareAsText.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ctlTantaEVRStreamDisplay.resx">
+      <DependentUpon>ctlTantaEVRStreamDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlTantaEVRFilePlayer.resx">
+      <DependentUpon>ctlTantaEVRFilePlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlTantaTransformPicker.resx">
+      <DependentUpon>ctlTantaTransformPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlTantaVideoPickerViaReader.resx">
+      <DependentUpon>ctlTantaVideoPickerViaReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctlTantaVideoPicker.resx">
+      <DependentUpon>ctlTantaVideoPicker.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OISCommon\OISCommon.csproj">
+      <Project>{63f435c6-492c-4155-ab3b-589feb36804f}</Project>
+      <Name>OISCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

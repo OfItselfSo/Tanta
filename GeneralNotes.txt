@@ -1,0 +1,39 @@
+﻿####
+#### General Notes, See the aaReadMe.txt file in each sample project for application specific notes
+####
+
+The Tanta Sample Projects seek to provide simple (well, as simple as it can get) C# examples of
+how to use Windows Media Foundation. These samples are open source, released under the MIT license
+and available for download from http://www.GitHub.com/OfItselfSo/Tanta
+
+WMF is a Windows C++/COM technology and, although there is no Microsoft provided C# interface,
+there is a superb open source access library called MF.Net. (https://sourceforge.net/projects/mfnet)
+The MF.Net library acts as a translation layer between the Windows, WMF, COM and the C# managed code. 
+The names of the function calls are identical and once you get used to how to modify the parameters
+of the calls to work with C#, the many and various C++ WMF examples on the Internet become usable.
+
+The Windows WMF system offers numerous sample code projects and the MF.Net library provides C#
+translations of these. However, although these sample projects work, they do not seem to be 
+especially friendly to people trying to learn WMF for the first time. In general, the Tanta
+code is intended to provide a nice linear trajectory through the problem. Sort of a "do this, 
+because of this", "do this next, because of that" approach to the issue with as much of the 
+extraneous complexity as possible stripped out.  
+
+There is a free online companion book, "Windows Media Foundation - Getting Started in C#" 
+which contains a detailed discussion of much of the Tanta Sample code.
+  http://www.OfItselfSo.com/Tanta/Windows_Media_Foundation_Getting_Started_CSharp.pdf
+
+The Tanta applications all use, and require, the MF.Net libraries. A few of the Tanta applications
+are just simplified (and better commented) versions of the MF.Net samples - the remainder
+demonstrate functionality not present in those examples. 
+
+These samples were all written and tested on Windows 10 and Windows 7. Probably they will work on Win8
+but this has not been tested. Theoretically, they will work on Vista - but it is not likely.
+
+Some of the Tanta Sample Projects will read and/or write MP3 or MP4 files. Example MP3 and MP4
+files are located in the root directory of the Tanta repository. The Tanta Projects will
+assume a directory of C:\Dump as the default location of these files. To save yourself some
+time you might consider creating that directory and copying the example files there.
+
+Kind regards
+http://www.OfItselfSo.com/Tanta

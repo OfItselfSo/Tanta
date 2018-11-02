@@ -1,0 +1,20 @@
+﻿# This file contains the commands to manually configure the DLL in the registry. 
+# This is done via the RegAsm.exe utility. The location of the RegAsm.exe file
+# varies depending on the .Net version you are using so you will probably have 
+# to look for it.
+
+# Note that compiling this solution as Administrator (you need the permissions)
+# will automatically run RegAsm.exe for you. If you are manually running the 
+# commands below, you will probably need to start your command prompt as 
+# administrator
+
+# Note that running RegAsm.exe will also make calls into the dll and execute the 
+# contents of the DllRegisterServer and DllUnregisterServer functions in the
+# MFTTantaVideoRotator_Sync class. Look at the comments in that section of the 
+# source code for more information on why this is done.
+
+# Unregister Transform if it is present
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm C:\Projects\Tanta\TantaTransformInDLL\bin\Debug\MFTTantaVideoRotator_Sync.dll /u 
+
+# Register the Transform
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm C:\Projects\Tanta\TantaTransformInDLL\bin\Debug\MFTTantaVideoRotator_Sync.dll /tlb:MFTTantaVideoRotator_Sync.tlb /codebase  
