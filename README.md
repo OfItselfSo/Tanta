@@ -1,7 +1,7 @@
 # Tanta
 This purpose of this project is to provide documentation and code samples which will enable people to develop applications for Windows Media Foundation in the C# language.
 
-Normally, WMF is considered to be a C++ tool - however the full functionality of Windows Media Foundation is available to users of the C# language via the very capable open source MF.Net interface library.
+Normally, WMF is considered to be a C++ tool - however the full functionality of Windows Media Foundation is available to users of the C# language via the very capable open source [MF.Net](https://sourceforge.net/projects/mfnet/) interface library.
 
 Using C# and MF.Net you can source streams of media data, render those streams to the screen or save them to files. You can also manipulate the data as it passes through the Media Pipeline and make whatever changes to it you wish. The full debugging capabilities of Visual Studio are also available so you can step through your C# code to observe its operation.
 
@@ -9,7 +9,7 @@ The Tanta project has two parts: a free book (in pdf format) which provides deta
 
 ## The Book
 
-There is a book entitled "Windows Media Foundation: Getting Started in C#" available free of charge at the link [http://www.OfItselfSo.com/Tanta](http://www.OfItselfSo.com/Tanta). It is nearly 300 pages in length and, hopefully, along with the Sample Projects will enable you to write your own C# WMF applications. Although the book is intended for the C# programmer it does contain plenty of background material that would be of use to users of other languages.
+There is a book entitled "Windows Media Foundation: Getting Started in C#" available free of charge at the link [http://www.OfItselfSo.com/Tanta](http://www.OfItselfSo.com/Tanta). It is nearly 300 pages in length and, hopefully, along with the Sample Projects will enable you to write your own C# WMF applications. Although the book is intended for the C# programmer it does contain plenty of background material which would be of use to users of other languages.
 
 It should be noted that the above book, although it is a free download, is copywrited material. Please do not distribute or copy it (in whole or in part) without permission. If there is sufficient interest a paper version may be made available at nominal cost. 
 
