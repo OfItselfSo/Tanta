@@ -11,7 +11,7 @@ The Tanta project has two parts: a free book (in pdf format) which provides deta
 
 There is a book entitled *"Windows Media Foundation: Getting Started in C#"* available free of charge at the link [http://www.OfItselfSo.com/Tanta](http://www.OfItselfSo.com/Tanta). It is nearly 300 pages in length and, hopefully, along with the Sample Projects will enable you to write your own C# WMF applications. Although the book is intended for the C# programmer it does contain plenty of background material which would be of use to users of other languages.
 
-It should be noted that the above book, although it is a free download, is copywrited material. Please do not distribute or copy it (in whole or in part) without permission. If there is sufficient interest a paper version may be made available at nominal cost. 
+It should be noted that the above book, although it is a free download, is copyrighted material. Please do not distribute or copy it (in whole or in part) without permission. If there is sufficient interest a paper version may be made available at nominal cost. 
 
 ## The Sample Code
 
