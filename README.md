@@ -19,7 +19,7 @@ The Tanta Sample Projects are open source and released under the MIT License. It
 
 A selection of sample MP3 and MP4 files are available at the root of the Tanta Sample Application repository. All of the Tanta Sample Projects expect, by default, to read and write to a directory named "C:\Dump". You can save yourself a bit of typing if you create that directory and copy the sample files there.
 
-There are 15 Sample Projects (listed below) but 4 of them will probably not work on Windows 7 due to the inavailability of various codecs on that system. Windows 10 and Visual Studio 2017 (the community edition is fine) is the recommended development platform.
+There are 15 Sample Projects (listed below) but 4 of them will probably not work on Windows 7 due to missing codecs on that system. Windows 10 and Visual Studio 2017 (the community edition is fine) is the recommended development platform.
 
 ### The Tanta Sample Projects
 
