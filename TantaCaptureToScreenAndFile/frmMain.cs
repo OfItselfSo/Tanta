@@ -1136,9 +1136,6 @@ namespace TantaCaptureToScreenAndFile
         ///  Handle a picked video device and format
         /// </summary>
         /// <param name="videoFormatCont">the video format container. Also contains the device</param>
-        /// <history>
-        ///    01 Nov 18  Cynic - Started
-        /// </history>
         private void VideoFormatPickedHandler(object sender, TantaMFVideoFormatContainer videoFormatCont)
         {
             string mfDeviceName = "<unknown device>";
@@ -1147,7 +1144,7 @@ namespace TantaCaptureToScreenAndFile
             // set these now
             if (videoFormatCont != null)
             {
-                formatSummary = videoFormatCont.DisplayString();
+                formatSummary = videoFormatCont.DisplayString() + ", " + videoFormatCont.FrameRateAsString + " fps";
                 if (videoFormatCont.VideoDevice != null) mfDeviceName = videoFormatCont.VideoDevice.FriendlyName;
                 // set the button text appropriately
                 textBoxPickedVideoDeviceURL.Text = mfDeviceName + " " + formatSummary;

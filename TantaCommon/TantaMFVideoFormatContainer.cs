@@ -131,7 +131,7 @@ namespace TantaCommon
         {
             get
             {
-                if (frameRateDenominator < 0)
+                if (frameRateDenominator <= 0)
                 {
                     return "(undefined)";
                 }
@@ -153,7 +153,7 @@ namespace TantaCommon
         {
             get
             {
-                if (frameRateMinDenominator < 0)
+                if (frameRateMinDenominator <= 0)
                 {
                     return "(undefined)";
                 }
@@ -175,7 +175,7 @@ namespace TantaCommon
         {
             get
             {
-                if (frameRateMaxDenominator < 0)
+                if (frameRateMaxDenominator <= 0)
                 {
                     return "(undefined)";
                 }

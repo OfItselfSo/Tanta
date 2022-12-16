@@ -132,6 +132,85 @@ namespace TantaCommon
 
         /// +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
         /// <summary>
+        /// Sets the currently chosen device by friendly name
+        /// </summary>
+        /// <param name="friendlyNameIn">the friendly name</param>
+        /// <returns>the device corresponding to the friendly name or null</returns>
+        public TantaMFDevice ChooseCurrentDeviceByFriendlyName(string friendlyNameIn)
+        {
+            TantaMFDevice outDevice = null;
+
+            if (friendlyNameIn == null) return null;
+            if (friendlyNameIn.Length == 0) return null;
+
+            // iterate through the comboBoxCaptureDevices looking for a match
+            foreach(TantaMFDevice mfDevice in comboBoxCaptureDevices.Items)
+            {
+                if (mfDevice.FriendlyName == friendlyNameIn)
+                {
+                    outDevice = mfDevice;
+                    break;
+                }
+            }
+            if (outDevice != null)
+            {
+                // set it now
+                comboBoxCaptureDevices.SelectedItem = outDevice;
+            }
+            // return what we got
+            return outDevice;
+        }
+
+        /// +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+        /// <summary>
+        /// Sets the currently chosen Format by display string
+        /// </summary>
+        /// <param name="videoFormatStr">the video format type "YUY2", "RGBA" etc</param>
+        /// <param name="frameRateIn">the frame rate</param>
+        /// <param name="heightIn">the frame height in pixels</param>
+        /// <param name="widthIn">the frame width in pixels</param>
+        /// <returns>the format container corresponding to the display string or null</returns>
+        public TantaMFVideoFormatContainer ChooseCurrentFormatByFormat(string videoFormatStr, int widthIn, int heightIn, int frameRateIn)
+        {
+            ListViewItem matchingItem = null;
+            int matchingItemIndex = -1;
+
+            if (videoFormatStr == null) return null;
+            if (videoFormatStr.Length == 0) return null;
+
+            // iterate through the comboBoxCaptureDevices looking for a match
+            for (int i =0; i< listViewSupportedFormats.Items.Count; i++) 
+            {
+                ListViewItem lvi = listViewSupportedFormats.Items[i];
+                if (lvi.Tag == null) return null;
+                if ((lvi.Tag is TantaMFVideoFormatContainer) == false) return null;
+                // get the display string
+                string itemTypeString = (lvi.Tag as TantaMFVideoFormatContainer).SubTypeAsString;
+                if (itemTypeString == null) continue;
+                if (itemTypeString.Length==0) continue;
+                if (videoFormatStr != itemTypeString) continue;
+                if (frameRateIn != (lvi.Tag as TantaMFVideoFormatContainer).FrameRate) continue;
+                if (widthIn != (lvi.Tag as TantaMFVideoFormatContainer).FrameSizeWidth) continue;
+                if (heightIn != (lvi.Tag as TantaMFVideoFormatContainer).FrameSizeHeight) continue;
+
+                // we found a match
+                matchingItem = lvi;
+                matchingItemIndex = i;
+                break;
+
+            }
+            // did we find it?
+            if (matchingItem == null) return null;
+            // yes, set it now
+            listViewSupportedFormats.Items[matchingItemIndex].Selected = true;
+            listViewSupportedFormats.Items[matchingItemIndex].Focused = true;
+            listViewSupportedFormats.Items[matchingItemIndex].EnsureVisible();
+            // return what we got
+            return (matchingItem.Tag as TantaMFVideoFormatContainer);
+        }
+
+        /// +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+        /// <summary>
         /// Handle a selected index changed on our video capture device combo box
         /// </summary>
         /// <history>
